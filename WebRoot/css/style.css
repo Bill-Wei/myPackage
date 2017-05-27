@@ -1,0 +1,20 @@
+
+a{
+	FONT-FAMILY: 宋体;
+	font-size: 12px;
+	text-decoration: none;
+	color: #000000;
+	
+}
+ a:HOVER {
+	color: #888888;
+}
+strong {
+	font-family: 楷体;
+	
+}
+.font{
+	font-size: 12px;
+	color: red;
+}
+	
