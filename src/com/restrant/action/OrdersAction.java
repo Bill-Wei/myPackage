@@ -108,7 +108,7 @@ public class OrdersAction extends ActionSupport implements RequestAware,
 	public String toMyOrders() throws Exception {
 		Users user = (Users) session.get("user");
 		List myOrdersList = ordersBiz.getOrdersByUserId(user.getId());
-		System.out.println("userid  "+myOrdersList);
+//		System.out.println("userid  "+myOrdersList);
 		request.put("myOrdersList", myOrdersList);
 		return "myorders";
 	}
@@ -133,7 +133,7 @@ public class OrdersAction extends ActionSupport implements RequestAware,
 		// 125行~128行--》初始化Pager，即进去页面时先初始化显示第一页的列表
 		int curPage = 1;
 		if (pager != null) {
-			pager.setCurPage(curPage);
+			curPage = pager.getCurPage();
 		}
 
 		// 131~140行根据查询条件获取列表
@@ -141,6 +141,7 @@ public class OrdersAction extends ActionSupport implements RequestAware,
 		if (orders != null) {
 			// 指定查询条件，则获取满足条件、指定页面的订单列表
 			ordersList = ordersBiz.getOrdersByCondition(orders, curPage);
+			pager=ordersBiz.getPagerOfOrders(orders);
 			// 将查询条件存入request范围，将作为分页超链接中的参数值
 			if (orders.getOid() != null) {
 				request.put("oid", orders.getOid());

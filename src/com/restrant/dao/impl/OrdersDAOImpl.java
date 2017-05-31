@@ -50,7 +50,7 @@ public class OrdersDAOImpl implements OrdersDAO {
 		Criteria c = session.createCriteria(Orders.class);
 		c.setFirstResult(6 * (page - 1));
 		c.setMaxResults(6);
-		return null;
+		return c.list();
 	}
 
 	// 统计所有订单总数
@@ -59,7 +59,7 @@ public class OrdersDAOImpl implements OrdersDAO {
 		Integer count = null;
 		try {
 			Session session = sessionFactory.getCurrentSession();
-			String hql = "select count(o) from orders o";
+			String hql = "select count(o) from Orders o";
 			Query query = session.createQuery(hql);
 			count = Integer.parseInt(query.uniqueResult().toString());
 		} catch (Exception e) {

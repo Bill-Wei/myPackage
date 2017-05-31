@@ -5,9 +5,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="/Restrant/css/style.css" type="text/css">
 <title>我的订单</title>
 </head>
-<body>
+<body style="font-size: 14px">
 	<table width="90%" height="629" border="0" cellpadding="0" cellspacing="0" align="center">
 		<tr>
 			<td width="200" height="101">
@@ -17,8 +18,7 @@
 			<td width="640" style="padding-left: 40px;"></td>
 		</tr>
 		<tr>
-			<td height="41" colspan="2"
-					style="background-image:url(images/001.gif);" align="center">
+			<td height="41" colspan="2" style="background-image:url(images/001.gif); font-family: 宋体" align="center">
 					|
 					<a href="/Restrant/toShowMeal">网站首页</a> |
 					<s:if test="(#session.admin==null) && (#session.user==null)">					
@@ -62,7 +62,7 @@
 					<br>
 					<hr>
 					<table align="center" width="95%" cellspacing="0" cellpadding="3" 
-					style="text-align: center; border:1px #CCCCCC solid;">
+					style="text-align: center; border:1px #CCCCCC solid;font-size: 14px">
 						<tr style="background-color: #CCCCFF;">
 							<td>订单编号</td>
 							<td>订单时间</td>
@@ -85,7 +85,7 @@
 								<a href="/Restrant/deleteOrdersDetails?oid=${oid}">删除</a>
 								</s:if></td>
 						</tr>
-						<s:set var="total" value="#total+orderPrice" />
+						<s:set var="total" value="#total+orderPrice*0.9" />
 						</s:iterator>
 						<tr style="background-color: #CCCCFF;">
 						<td>合计</td>

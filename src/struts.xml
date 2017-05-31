@@ -117,7 +117,7 @@
 		<interceptor-ref name="defaultStack"></interceptor-ref> -->
 	</action>
 	<action name="deleteOrdersDetails" class="ordersAction" method="deleteOrdersDetails">
-		<result name="toShowMeal" type="redirectAction">toMyOrders</result>
+		<result name="toMyOrders" type="redirectAction">toMyOrders</result>
 		<interceptor-ref name="loginCheck"></interceptor-ref>
 		<interceptor-ref name="defaultStack"></interceptor-ref>
 	</action>
